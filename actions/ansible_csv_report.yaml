@@ -1,0 +1,19 @@
+name: ansible_csv_report
+description: "This create Ansible CSV Report"
+pack: ansible_csv_report
+enabled: true
+runner_type: python-script
+entry_point: ansible_csv_report.py
+parameters:
+  input_json:
+    type: string
+    immutable: true
+    default: false
+    required: true
+    position: 1
+  csv_path:
+    type: string
+    immutable: true
+    default: false
+    required: true
+    position: 2

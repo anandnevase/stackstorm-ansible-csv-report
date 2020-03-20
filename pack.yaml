@@ -1,0 +1,18 @@
+---
+ref: ansible_csv_report
+name: Ansible CSV Report
+# User-friendly pack description.
+description: PAck for creating ansible CSV report
+keywords:
+    - ansible
+    - report
+version: 1.0.0
+python_versions:
+  - "2"
+  - "3"
+author: StackStorm, Inc.
+# Email of the pack author.
+email: info@stackstorm.com
+# Optional list of additional contributors to the pack.
+contributors:
+  - "xxx@gmail.com>"
