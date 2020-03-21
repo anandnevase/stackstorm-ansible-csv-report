@@ -7,8 +7,7 @@ class JsonStringToObject(Action):
 
     def run(self, input_json, csv_path):
       data = json.loads(input_json)
-      out_file = open(csv_path, 'w') 
-      with open(output_file, 'w') as csvfile:
+      with open(csv_path, 'w') as csvfile:
         fieldnames = ['Hostname', 'Status']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
