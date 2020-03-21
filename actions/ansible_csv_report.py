@@ -13,6 +13,6 @@ class JsonStringToObject(Action):
 
         writer.writeheader()
         for host, value in data.iteritems():
-          writer.writerow({'Hostname': host, 'Status': 'failed' if (ast.literal_eval(value['dark'])!=0) else 'passed'})
+          writer.writerow({'Hostname': host, 'Status': 'failed' if (value['dark']!=0) else 'passed'})
 
       return true
