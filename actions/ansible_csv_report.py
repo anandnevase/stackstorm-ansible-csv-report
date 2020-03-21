@@ -1,18 +1,18 @@
 from st2common.runners.base_action import Action
 import json
-import sys
+import ast
 import csv
 
 class JsonStringToObject(Action):
 
     def run(self, input_json, csv_path):
-      data = json.loads(input_json)
+      data = ast.literal_eval(json.loads(input_json))
       with open(csv_path, 'w') as csvfile:
         fieldnames = ['Hostname', 'Status']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
-        for host in data.iterkeys():
-          writer.writerow({'Hostname': host, 'Status': 'failed' if (data[host]['dark']!=0) else 'passed'})
+        for host, value in data.iteritems():
+          writer.writerow({'Hostname': host, 'Status': 'failed' if (ast.literal_eval(value['dark'])!=0) else 'passed'})
 
       return true
