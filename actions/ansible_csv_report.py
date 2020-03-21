@@ -12,7 +12,7 @@ class JsonStringToObject(Action):
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
-        for host in data.keys():
+        for host in data.iterkeys():
           writer.writerow({'Hostname': host, 'Status': 'failed' if (data[host]['dark']!=0) else 'passed'})
 
       return true
