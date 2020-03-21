@@ -8,12 +8,10 @@ parameters:
   input_json:
     type: string
     immutable: true
-    default: false
     required: true
-    position: 1
+    position: 0
   csv_path:
     type: string
     immutable: true
-    default: false
     required: true
-    position: 2
+    position: 1
