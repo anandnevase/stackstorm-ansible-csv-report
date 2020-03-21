@@ -13,4 +13,5 @@ class JsonStringToObject(Action):
 
         writer.writeheader()
         for host, value in data.iteritems():
-          writer.writerow({'Hostname': host, 'Status': 'failed' if (value['dark']!=0) else 'passed'})
+            if host != 'localhost':
+                writer.writerow({'Hostname': host, 'Status': 'failed' if (value['dark']!=0) else 'passed'})
